@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador paramétrico — Ensaio CBR / ISC</title>
+<meta name="description" content="Simulador interativo do ensaio CBR: varie solo, energia e umidade e veja a curva de compactação, a curva carga×penetração e o valor de CBR em tempo real.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+  <div class="migalha"><a href="index.html" data-i18n="nav_inicio">Início</a> › <span data-i18n="nav_sim">Simulador</span></div>
+  <h1 data-i18n="sim_titulo">Simulador paramétrico do CBR</h1>
+  <p class="lead" data-i18n="sim_lead">Altere o tipo de solo, a energia de compactação e a umidade de moldagem e
+  observe imediatamente o efeito na densidade, na curva carga×penetração e no valor de CBR.</p>
+
+  <div class="callout aviso" style="margin-top:0" data-i18n="sim_aviso">
+    Modelo <b>sintético</b> para ensino — reproduz tendências qualitativas do ensaio, não é
+    dado de laboratório.
+  </div>
+
+  <div class="sim-layout">
+    <!-- Painel de controles -->
+    <div class="painel">
+      <label for="solo" data-i18n="lbl_solo">Tipo de solo</label>
+      <select id="solo"></select>
+
+      <label for="energia" data-i18n="lbl_energia">Energia de compactação</label>
+      <select id="energia">
+        <option value="normal" data-i18n="en_normal">Normal (12 golpes/camada)</option>
+        <option value="intermediaria" selected data-i18n="en_inter">Intermediária (26 golpes/camada)</option>
+        <option value="modificada" data-i18n="en_modif">Modificada (55 golpes/camada)</option>
+      </select>
+
+      <label for="umidade"><span data-i18n="lbl_umidade">Umidade de moldagem</span>: <span class="range-val" id="umidade-val">—</span> %</label>
+      <input type="range" id="umidade" min="4" max="34" step="0.5" value="14">
+      <div class="small" id="wopt-hint"></div>
+
+      <label for="ruido"><span data-i18n="lbl_disp">Dispersão das leituras</span>: <span class="range-val" id="ruido-val">2</span> %</label>
+      <input type="range" id="ruido" min="0" max="10" step="1" value="2">
+
+      <button class="acao" id="btn-otima" type="button" data-i18n="btn_otima">↺ Ajustar para a umidade ótima</button>
+      <button class="acao sec" id="btn-csv" type="button" data-i18n="btn_csv">⬇ Exportar leituras (CSV)</button>
+    </div>
+
+    <!-- Resultados -->
+    <div>
+      <div class="resultado">
+        <div class="kpi destaque"><div class="n" id="kpi-cbr">—</div><div class="l" data-i18n="kpi_cbr">CBR final (%)</div></div>
+        <div class="kpi"><div class="n" id="kpi-classe" style="font-size:1.1rem">—</div><div class="l" data-i18n="kpi_classe">Classificação</div></div>
+        <div class="kpi"><div class="n" id="kpi-gc">—</div><div class="l" data-i18n="kpi_gc">Grau compact. (%)</div></div>
+        <div class="kpi"><div class="n" id="kpi-exp">—</div><div class="l" data-i18n="kpi_exp">Expansão (%)</div></div>
+      </div>
+      <div class="callout" id="uso-box" style="margin-top:.8rem"><b data-i18n="uso_label">Emprego</b>: <span id="uso-txt">—</span></div>
+
+      <div class="tabs">
+        <button class="ativo" data-aba="aba-pen" data-i18n="aba_pen">Curva carga × penetração</button>
+        <button data-aba="aba-comp" data-i18n="aba_comp">Curva de compactação</button>
+        <button data-aba="aba-tab" data-i18n="aba_tab">Tabela de leituras</button>
+      </div>
+
+      <div class="aba ativo" id="aba-pen">
+        <div class="chart-box"><canvas id="chart-pen"></canvas></div>
+        <p class="small" data-i18n="nota_pen">Linhas tracejadas: penetrações de controle (2,54 e 5,08 mm). O CBR é a
+        razão entre a pressão lida e a pressão-padrão em cada ponto.</p>
+      </div>
+      <div class="aba" id="aba-comp">
+        <div class="chart-box"><canvas id="chart-comp"></canvas></div>
+        <p class="small" data-i18n="nota_comp">O ponto destacado é a moldagem atual sobre a curva γ<sub>d</sub>×w da
+        energia selecionada. O ápice é a umidade ótima.</p>
+      </div>
+      <div class="aba" id="aba-tab">
+        <div class="tabela-dados"><table class="tab" id="tab-leituras"></table></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/vendor/chart.umd.min.js"></script>
+<script src="assets/js/i18n-app.js"></script>
+<script src="assets/js/cbr-core.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/simulador.js"></script>
+</body>
+</html>

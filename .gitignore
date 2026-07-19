@@ -1,0 +1,11 @@
+# Dependências de teste (não versionar)
+.test/
+node_modules/
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+# Editores
+.vscode/
+.idea/
+*.swp

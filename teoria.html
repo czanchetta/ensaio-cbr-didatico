@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teoria — Ensaio CBR / ISC</title>
+<meta name="description" content="Fundamentos teóricos do ensaio de Índice de Suporte Califórnia: compactação, curva de compactação, definição do CBR, expansão e classificação de subleitos.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<div data-lang="pt">
+  <div class="migalha"><a href="index.html">Início</a> › Teoria</div>
+  <h1>Fundamentos teóricos do ensaio CBR / ISC</h1>
+  <p class="lead">O Índice de Suporte Califórnia (ISC), em inglês <i>California Bearing Ratio</i>
+  (CBR), é um índice empírico que mede a <b>capacidade de suporte</b> de um solo compactado,
+  usado principalmente no dimensionamento de pavimentos flexíveis.</p>
+
+  <h2>1. Origem e definição</h2>
+  <p>O ensaio foi desenvolvido pelo <i>California Division of Highways</i> na década de 1930.
+  A ideia central é <b>comparar</b> a resistência à penetração do solo em estudo com a de um
+  material de referência de altíssima qualidade — uma <b>brita graduada padrão</b>, à qual se
+  atribui, por convenção, CBR = 100%.</p>
+
+  <div class="formula">
+    CBR (%) =
+    <span class="frac"><span class="num">pressão no solo ensaiado</span>
+    <span class="den">pressão-padrão na brita de referência</span></span>
+    &times; 100
+  </div>
+
+  <p>As <b>pressões-padrão</b> (a resistência da brita de referência) foram fixadas
+  experimentalmente para duas penetrações de controle:</p>
+
+  <table class="tab">
+    <thead><tr><th>Penetração</th><th>Pressão-padrão (MPa)</th><th>kgf/cm²</th><th>psi (aprox.)</th></tr></thead>
+    <tbody>
+      <tr><td>2,54 mm (0,1")</td><td>6,9</td><td>70,3</td><td>1000</td></tr>
+      <tr><td>5,08 mm (0,2")</td><td>10,3</td><td>105,5</td><td>1500</td></tr>
+    </tbody>
+    <caption>Pressões de referência (brita-padrão). O CBR é calculado nas duas penetrações;
+    adota-se o <b>maior</b> valor.</caption>
+  </table>
+
+  <div class="callout">
+    <b>Regra prática:</b> normalmente o CBR a <b>2,54 mm</b> governa (é o maior). Se o valor a
+    5,08 mm resultar maior, o ensaio deve ser <b>repetido</b>; confirmando-se, adota-se o valor
+    a 5,08 mm.
+  </div>
+
+  <h2>2. Compactação e a curva γ<sub>d</sub> × w</h2>
+  <p>O CBR não é uma propriedade fixa do solo — depende fortemente de <b>como</b> ele foi
+  compactado. Dois fatores dominam:</p>
+  <ul>
+    <li><b>Energia de compactação:</b> quanto maior a energia (mais golpes do soquete), maior
+    a massa específica seca e, em geral, maior o CBR.</li>
+    <li><b>Umidade de moldagem:</b> existe uma <b>umidade ótima</b> (w<sub>ót</sub>) na qual se
+    atinge a massa específica seca máxima (γ<sub>d,máx</sub>). Acima ou abaixo dela, a densidade
+    e o CBR caem.</li>
+  </ul>
+
+  <p>A relação entre massa específica seca e umidade é a <b>curva de compactação</b> — uma
+  parábola com o ápice em (w<sub>ót</sub>, γ<sub>d,máx</sub>):</p>
+
+  <div class="formula">
+    γ<sub>d</sub> =
+    <span class="frac"><span class="num">γ<sub>úmido</sub></span><span class="den">1 + w</span></span>
+    &nbsp;&nbsp;&nbsp; (w em fração decimal)
+  </div>
+
+  <p>Três <b>energias de compactação</b> normatizadas são usadas no molde CBR (5 camadas):</p>
+  <table class="tab">
+    <thead><tr><th>Energia</th><th>Golpes por camada</th><th>Nº de camadas</th><th>Aplicação típica</th></tr></thead>
+    <tbody>
+      <tr><td>Normal</td><td>12</td><td>5</td><td>Subleito de vias de baixo tráfego</td></tr>
+      <tr><td>Intermediária</td><td>26</td><td>5</td><td>Reforço de subleito / sub-base</td></tr>
+      <tr><td>Modificada</td><td>55</td><td>5</td><td>Base e sub-base de tráfego pesado</td></tr>
+    </tbody>
+    <caption>Soquete grande (4,536 kgf, altura de queda 45,7 cm). A energia modificada
+    reproduz a exigência do tráfego rodoviário moderno.</caption>
+  </table>
+
+  <div class="callout dica">
+    Explore isto na prática: na página do <a href="simulador.html">simulador</a> você altera a
+    energia e a umidade e vê a curva de compactação e o CBR mudando em tempo real.
+  </div>
+
+  <h2>3. A curva carga × penetração</h2>
+  <p>No ensaio de penetração, um pistão de <b>área 3 pol² (≈19,35 cm²)</b> é cravado no corpo de
+  prova à velocidade de <b>1,27 mm/min</b>. Registra-se a <b>carga</b> (ou pressão) a cada
+  incremento de penetração, gerando a curva carga×penetração.</p>
+  <p>Essa curva costuma ser <b>côncava para cima no início</b> (acomodação da superfície). Nesse
+  caso aplica-se a <b>correção da concavidade</b>: traça-se a tangente no ponto de inflexão e
+  desloca-se a origem para onde a tangente corta o eixo das penetrações. As pressões a 2,54 e
+  5,08 mm são lidas a partir dessa <b>nova origem corrigida</b>.</p>
+
+  <h2>4. Expansão (inchamento)</h2>
+  <p>Antes da penetração, o corpo de prova fica <b>imerso em água por 4 dias</b>, simulando a
+  pior condição de umidade em serviço. Mede-se diariamente a <b>expansão</b> com um extensômetro:</p>
+  <div class="formula">
+    Expansão (%) =
+    <span class="frac"><span class="num">leitura final − leitura inicial</span>
+    <span class="den">altura inicial do corpo de prova</span></span>
+    &times; 100
+  </div>
+  <p>Solos muito plásticos (argilas) incham mais, o que é crítico: mesmo um CBR aceitável pode
+  ser reprovado se a <b>expansão for excessiva</b>, pois o inchamento sob o pavimento causa
+  trincas e deformações.</p>
+
+  <h2>5. Classificação e emprego no pavimento</h2>
+  <table class="tab">
+    <thead><tr><th>CBR (%)</th><th>Qualidade</th><th>Emprego típico</th><th>Critério (DNIT)</th></tr></thead>
+    <tbody>
+      <tr><td>&lt; 2</td><td>Péssimo</td><td>Inadequado — substituir/estabilizar</td><td>—</td></tr>
+      <tr><td>2 – 5</td><td>Ruim</td><td>Subleito de baixa capacidade</td><td>Subleito: CBR ≥ 2%, exp ≤ 2%</td></tr>
+      <tr><td>5 – 12</td><td>Regular</td><td>Subleito bom</td><td>exp ≤ 2%</td></tr>
+      <tr><td>12 – 20</td><td>Bom</td><td>Reforço de subleito</td><td>CBR ≥ 12%, exp ≤ 1%</td></tr>
+      <tr><td>20 – 60</td><td>Muito bom</td><td>Sub-base</td><td>CBR ≥ 20%, exp ≤ 1%</td></tr>
+      <tr><td>&gt; 60</td><td>Excelente</td><td>Base</td><td>CBR ≥ 60–80% conforme tráfego</td></tr>
+    </tbody>
+    <caption>Faixas didáticas de referência. Os critérios exatos variam com o método de
+    dimensionamento e o volume de tráfego (número N).</caption>
+  </table>
+
+  <h2>6. Correlações úteis</h2>
+  <p>O CBR é empírico, mas há correlações aproximadas muito usadas em anteprojeto:</p>
+  <ul>
+    <li><b>Módulo de resiliência (subleito):</b> M<sub>R</sub> (MPa) ≈ 10 × CBR
+    (para CBR ≤ 20%, correlação de Heukelom &amp; Klomp).</li>
+    <li><b>Coeficiente de recalque:</b> valores maiores de CBR indicam maior rigidez do
+    subleito e menor espessura necessária de pavimento.</li>
+  </ul>
+  <div class="callout aviso">
+    Correlações são <b>estimativas de anteprojeto</b>. Para projeto executivo, ensaie o
+    material real na energia e umidade de campo previstas.
+  </div>
+
+  <div class="centro" style="margin-top:2rem">
+    <a class="tag" href="procedimento.html" style="font-size:1rem;padding:.5rem 1.2rem">→ Próximo: Procedimento passo a passo</a>
+  </div>
+
+</div>
+<div data-lang="en"><div class="migalha"><a href="index.html">Home</a> › Theory</div>
+  <h1>Theoretical Foundations of the CBR / ISC Test</h1>
+  <p class="lead">The California Bearing Ratio (CBR), also known in Portuguese as Índice de Suporte Califórnia (ISC), is an empirical index that measures the <b>bearing capacity</b> of a compacted soil, used primarily in the design of flexible pavements.</p>
+
+  <h2>1. Origin and Definition</h2>
+  <p>The test was developed by the <i>California Division of Highways</i> in the 1930s. The central idea is to <b>compare</b> the penetration resistance of the soil under study with that of a reference material of the highest quality — a <b>standard graded aggregate</b>, to which a CBR value of 100% is assigned by convention.</p>
+
+  <div class="formula">
+    CBR (%) =
+    <span class="frac"><span class="num">pressure in tested soil</span>
+    <span class="den">standard pressure in reference aggregate</span></span>
+    &times; 100
+  </div>
+
+  <p>The <b>standard pressures</b> (the resistance of the reference aggregate) were established experimentally for two control penetrations:</p>
+
+  <table class="tab">
+    <thead><tr><th>Penetration</th><th>Standard Pressure (MPa)</th><th>kgf/cm²</th><th>psi (approx.)</th></tr></thead>
+    <tbody>
+      <tr><td>2.54 mm (0.1")</td><td>6.9</td><td>70.3</td><td>1000</td></tr>
+      <tr><td>5.08 mm (0.2")</td><td>10.3</td><td>105.5</td><td>1500</td></tr>
+    </tbody>
+    <caption>Reference pressures (standard aggregate). The CBR is calculated at both penetrations; the <b>higher</b> value is adopted.</caption>
+  </table>
+
+  <div class="callout">
+    <b>Practical rule:</b> normally the CBR at <b>2.54 mm</b> governs (is the higher value). If the value at 5.08 mm is higher, the test must be <b>repeated</b>; if confirmed, the value at 5.08 mm is adopted.
+  </div>
+
+  <h2>2. Compaction and the γ<sub>d</sub> × w Curve</h2>
+  <p>CBR is not a fixed property of the soil — it depends strongly on <b>how</b> it was compacted. Two factors dominate:</p>
+  <ul>
+    <li><b>Compaction energy:</b> the greater the energy (more rammer blows), the greater the dry unit weight and, in general, the greater the CBR.</li>
+    <li><b>Molding moisture:</b> there is an <b>optimum moisture content</b> (w<sub>opt</sub>) at which the maximum dry unit weight (γ<sub>d,max</sub>) is achieved. Above or below it, density and CBR decrease.</li>
+  </ul>
+
+  <p>The relationship between dry unit weight and moisture is the <b>compaction curve</b> — a parabola with its apex at (w<sub>opt</sub>, γ<sub>d,max</sub>):</p>
+
+  <div class="formula">
+    γ<sub>d</sub> =
+    <span class="frac"><span class="num">γ<sub>wet</sub></span><span class="den">1 + w</span></span>
+    &nbsp;&nbsp;&nbsp; (w in decimal fraction)
+  </div>
+
+  <p>Three standardized <b>compaction energies</b> are used in the CBR mold (5 layers):</p>
+  <table class="tab">
+    <thead><tr><th>Energy</th><th>Blows per Layer</th><th>Number of Layers</th><th>Typical Application</th></tr></thead>
+    <tbody>
+      <tr><td>Standard</td><td>12</td><td>5</td><td>Subgrade of low-traffic roads</td></tr>
+      <tr><td>Intermediate</td><td>26</td><td>5</td><td>Subgrade reinforcement / sub-base</td></tr>
+      <tr><td>Modified</td><td>55</td><td>5</td><td>Base and sub-base for heavy traffic</td></tr>
+    </tbody>
+    <caption>Large rammer (4.536 kgf, drop height 45.7 cm). Modified energy reproduces the requirements of modern highway traffic.</caption>
+  </table>
+
+  <div class="callout dica">
+    Explore this in practice: on the <a href="simulador.html">simulator</a> page you can change the energy and moisture and see the compaction curve and CBR changing in real time.
+  </div>
+
+  <h2>3. The Load × Penetration Curve</h2>
+  <p>In the penetration test, a piston with <b>area 3 in² (≈19.35 cm²)</b> is driven into the specimen at a rate of <b>1.27 mm/min</b>. The <b>load</b> (or pressure) is recorded at each penetration increment, generating the load×penetration curve.</p>
+  <p>This curve is usually <b>concave upward at the beginning</b> (surface seating). In this case, a <b>concavity correction</b> is applied: a tangent is drawn at the inflection point and the origin is shifted to where the tangent intersects the penetration axis. The pressures at 2.54 and 5.08 mm are read from this <b>new corrected origin</b>.</p>
+
+  <h2>4. Swelling</h2>
+  <p>Before penetration, the specimen is <b>immersed in water for 4 days</b>, simulating the worst moisture condition in service. The <b>swelling</b> is measured daily with an extensometer:</p>
+  <div class="formula">
+    Swelling (%) =
+    <span class="frac"><span class="num">final reading − initial reading</span>
+    <span class="den">initial height of specimen</span></span>
+    &times; 100
+  </div>
+  <p>Highly plastic soils (clays) swell more, which is critical: even an acceptable CBR can be rejected if <b>swelling is excessive</b>, as swelling under the pavement causes cracking and distortion.</p>
+
+  <h2>5. Classification and Use in Pavement Design</h2>
+  <table class="tab">
+    <thead><tr><th>CBR (%)</th><th>Quality</th><th>Typical Use</th><th>Criterion (DNIT)</th></tr></thead>
+    <tbody>
+      <tr><td>&lt; 2</td><td>Very poor</td><td>Unsuitable — replace/stabilize</td><td>—</td></tr>
+      <tr><td>2 – 5</td><td>Poor</td><td>Low-capacity subgrade</td><td>Subgrade: CBR ≥ 2%, swell ≤ 2%</td></tr>
+      <tr><td>5 – 12</td><td>Fair</td><td>Good subgrade</td><td>swell ≤ 2%</td></tr>
+      <tr><td>12 – 20</td><td>Good</td><td>Subgrade reinforcement</td><td>CBR ≥ 12%, swell ≤ 1%</td></tr>
+      <tr><td>20 – 60</td><td>Very good</td><td>Sub-base</td><td>CBR ≥ 20%, swell ≤ 1%</td></tr>
+      <tr><td>&gt; 60</td><td>Excellent</td><td>Base</td><td>CBR ≥ 60–80% depending on traffic</td></tr>
+    </tbody>
+    <caption>Didactic reference ranges. Exact criteria vary with the design method and traffic volume (number N).</caption>
+  </table>
+
+  <h2>6. Useful Correlations</h2>
+  <p>CBR is empirical, but there are approximate correlations widely used in preliminary design:</p>
+  <ul>
+    <li><b>Resilient modulus (subgrade):</b> M<sub>R</sub> (MPa) ≈ 10 × CBR
+    (for CBR ≤ 20%, Heukelom &amp; Klomp correlation).</li>
+    <li><b>Settlement coefficient:</b> higher CBR values indicate greater subgrade stiffness and lower required pavement thickness.</li>
+  </ul>
+  <div class="callout aviso">
+    Correlations are <b>preliminary design estimates</b>. For final design, test the actual material at the energy and moisture conditions expected in the field.
+  </div>
+
+  <div class="centro" style="margin-top:2rem">
+    <a class="tag" href="procedimento.html" style="font-size:1rem;padding:.5rem 1.2rem">→ Next: Step-by-Step Procedure</a>
+  </div></div>
+<div data-lang="es"><div class="migalha"><a href="index.html">Inicio</a> › Teoría</div>
+  <h1>Fundamentos teóricos del ensayo CBR / ISC</h1>
+  <p class="lead">El Índice de Soporte California (ISC), en inglés <i>California Bearing Ratio</i>
+  (CBR), es un índice empírico que mide la <b>capacidad de soporte</b> de un suelo compactado,
+  usado principalmente en el dimensionamiento de pavimentos flexibles.</p>
+
+  <h2>1. Origen y definición</h2>
+  <p>El ensayo fue desarrollado por <i>California Division of Highways</i> en la década de 1930.
+  La idea central es <b>comparar</b> la resistencia a la penetración del suelo en estudio con la de un
+  material de referencia de altísima calidad — una <b>grava graduada estándar</b>, a la cual se
+  le asigna, por convención, CBR = 100%.</p>
+
+  <div class="formula">
+    CBR (%) =
+    <span class="frac"><span class="num">presión en el suelo ensayado</span>
+    <span class="den">presión-estándar en la grava de referencia</span></span>
+    &times; 100
+  </div>
+
+  <p>Las <b>presiones-estándar</b> (la resistencia de la grava de referencia) fueron fijadas
+  experimentalmente para dos penetraciones de control:</p>
+
+  <table class="tab">
+    <thead><tr><th>Penetración</th><th>Presión-estándar (MPa)</th><th>kgf/cm²</th><th>psi (aprox.)</th></tr></thead>
+    <tbody>
+      <tr><td>2,54 mm (0,1")</td><td>6,9</td><td>70,3</td><td>1000</td></tr>
+      <tr><td>5,08 mm (0,2")</td><td>10,3</td><td>105,5</td><td>1500</td></tr>
+    </tbody>
+    <caption>Presiones de referencia (grava-estándar). El CBR se calcula en las dos penetraciones;
+    se adopta el <b>mayor</b> valor.</caption>
+  </table>
+
+  <div class="callout">
+    <b>Regla práctica:</b> normalmente el CBR a <b>2,54 mm</b> rige (es el mayor). Si el valor a
+    5,08 mm resulta mayor, el ensayo debe ser <b>repetido</b>; confirmándose, se adopta el valor
+    a 5,08 mm.
+  </div>
+
+  <h2>2. Compactación y la curva γ<sub>d</sub> × w</h2>
+  <p>El CBR no es una propiedad fija del suelo — depende fuertemente de <b>cómo</b> fue
+  compactado. Dos factores dominan:</p>
+  <ul>
+    <li><b>Energía de compactación:</b> cuanto mayor la energía (más golpes del pisón), mayor
+    la masa específica seca y, en general, mayor el CBR.</li>
+    <li><b>Humedad de moldeo:</b> existe una <b>humedad óptima</b> (w<sub>ót</sub>) en la cual se
+    alcanza la masa específica seca máxima (γ<sub>d,máx</sub>). Por encima o por debajo de ella, la densidad
+    y el CBR caen.</li>
+  </ul>
+
+  <p>La relación entre masa específica seca y humedad es la <b>curva de compactación</b> — una
+  parábola con el ápice en (w<sub>ót</sub>, γ<sub>d,máx</sub>):</p>
+
+  <div class="formula">
+    γ<sub>d</sub> =
+    <span class="frac"><span class="num">γ<sub>húmedo</sub></span><span class="den">1 + w</span></span>
+    &nbsp;&nbsp;&nbsp; (w en fracción decimal)
+  </div>
+
+  <p>Tres <b>energías de compactación</b> normalizadas se usan en el molde CBR (5 capas):</p>
+  <table class="tab">
+    <thead><tr><th>Energía</th><th>Golpes por capa</th><th>Nº de capas</th><th>Aplicación típica</th></tr></thead>
+    <tbody>
+      <tr><td>Normal</td><td>12</td><td>5</td><td>Subrasante de vías de bajo tráfico</td></tr>
+      <tr><td>Intermedia</td><td>26</td><td>5</td><td>Refuerzo de subrasante / subbase</td></tr>
+      <tr><td>Modificada</td><td>55</td><td>5</td><td>Base y subbase de tráfico pesado</td></tr>
+    </tbody>
+    <caption>Pisón grande (4,536 kgf, altura de caída 45,7 cm). La energía modificada
+    reproduce la exigencia del tráfico vial moderno.</caption>
+  </table>
+
+  <div class="callout dica">
+    Explora esto en la práctica: en la página del <a href="simulador.html">simulador</a> puedes alterar la
+    energía y la humedad y ver la curva de compactación y el CBR cambiando en tiempo real.
+  </div>
+
+  <h2>3. La curva carga × penetración</h2>
+  <p>En el ensayo de penetración, un pistón de <b>área 3 pol² (≈19,35 cm²)</b> es clavado en el cuerpo de
+  prueba a velocidad de <b>1,27 mm/min</b>. Se registra la <b>carga</b> (o presión) a cada
+  incremento de penetración, generando la curva carga×penetración.</p>
+  <p>Esta curva suele ser <b>cóncava hacia arriba al inicio</b> (acomodación de la superficie). En ese
+  caso se aplica la <b>corrección de la concavidad</b>: se traza la tangente en el punto de inflexión y
+  se desplaza el origen a donde la tangente corta el eje de las penetraciones. Las presiones a 2,54 y
+  5,08 mm se leen a partir de ese <b>nuevo origen corregido</b>.</p>
+
+  <h2>4. Expansión (hinchamiento)</h2>
+  <p>Antes de la penetración, el cuerpo de prueba permanece <b>inmerso en agua por 4 días</b>, simulando la
+  peor condición de humedad en servicio. Se mide diariamente la <b>expansión</b> con un extensómetro:</p>
+  <div class="formula">
+    Expansión (%) =
+    <span class="frac"><span class="num">lectura final − lectura inicial</span>
+    <span class="den">altura inicial del cuerpo de prueba</span></span>
+    &times; 100
+  </div>
+  <p>Suelos muy plásticos (arcillas) se hinchan más, lo que es crítico: incluso un CBR aceptable puede
+  ser rechazado si el <b>hinchamiento es excesivo</b>, pues la expansión bajo el pavimento causa
+  grietas y deformaciones.</p>
+
+  <h2>5. Clasificación y empleo en el pavimento</h2>
+  <table class="tab">
+    <thead><tr><th>CBR (%)</th><th>Calidad</th><th>Empleo típico</th><th>Criterio (DNIT)</th></tr></thead>
+    <tbody>
+      <tr><td>&lt; 2</td><td>Pésimo</td><td>Inadecuado — reemplazar/estabilizar</td><td>—</td></tr>
+      <tr><td>2 – 5</td><td>Malo</td><td>Subrasante de baja capacidad</td><td>Subrasante: CBR ≥ 2%, exp ≤ 2%</td></tr>
+      <tr><td>5 – 12</td><td>Regular</td><td>Subrasante buena</td><td>exp ≤ 2%</td></tr>
+      <tr><td>12 – 20</td><td>Bueno</td><td>Refuerzo de subrasante</td><td>CBR ≥ 12%, exp ≤ 1%</td></tr>
+      <tr><td>20 – 60</td><td>Muy bueno</td><td>Subbase</td><td>CBR ≥ 20%, exp ≤ 1%</td></tr>
+      <tr><td>&gt; 60</td><td>Excelente</td><td>Base</td><td>CBR ≥ 60–80% según tráfico</td></tr>
+    </tbody>
+    <caption>Rangos didácticos de referencia. Los criterios exactos varían con el método de
+    dimensionamiento y el volumen de tráfico (número N).</caption>
+  </table>
+
+  <h2>6. Correlaciones útiles</h2>
+  <p>El CBR es empírico, pero hay correlaciones aproximadas muy usadas en anteproyecto:</p>
+  <ul>
+    <li><b>Módulo de resiliencia (subrasante):</b> M<sub>R</sub> (MPa) ≈ 10 × CBR
+    (para CBR ≤ 20%, correlación de Heukelom &amp; Klomp).</li>
+    <li><b>Coeficiente de asentamiento:</b> valores mayores de CBR indican mayor rigidez de la
+    subrasante y menor espesor necesario de pavimento.</li>
+  </ul>
+  <div class="callout aviso">
+    Las correlaciones son <b>estimaciones de anteproyecto</b>. Para proyecto ejecutivo, ensaya el
+    material real en la energía y humedad de campo previstas.
+  </div>
+
+  <div class="centro" style="margin-top:2rem">
+    <a class="tag" href="procedimento.html" style="font-size:1rem;padding:.5rem 1.2rem">→ Siguiente: Procedimiento paso a paso</a>
+  </div></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

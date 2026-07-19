@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratório virtual — Ensaio CBR / ISC</title>
+<meta name="description" content="Execute o ensaio CBR virtualmente: molde o corpo de prova, aplique os golpes, faça a imersão de 4 dias, acione a prensa e leia a carga. Modos guiado e demonstração.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/bancada.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+  <div class="migalha"><a href="index.html" data-i18n="nav_inicio">Início</a> › <span data-i18n="nav_lab">Laboratório virtual</span></div>
+  <h1 data-i18n="lab_titulo">Laboratório virtual do ensaio CBR</h1>
+  <p class="lead" data-i18n="lab_lead">Execute o ensaio do início ao fim. No <b>modo guiado</b> você comanda cada etapa e
+  registra as leituras; no <b>modo demonstração</b> o ensaio roda sozinho para você acompanhar.</p>
+
+  <!-- Barra de modo e progresso -->
+  <div class="barra-modo">
+    <div class="modo-switch">
+      <span data-i18n="modo">Modo:</span>
+      <button id="modo-guiado" class="ativo" type="button" data-i18n="modo_guiado">🧑‍🔬 Guiado</button>
+      <button id="modo-demo" type="button" data-i18n="modo_demo">▶️ Demonstração</button>
+    </div>
+    <div class="etapas">
+      <span class="et ativa" data-et="1" data-i18n="et1">1 · Preparar</span>
+      <span class="et" data-et="2" data-i18n="et2">2 · Compactar</span>
+      <span class="et" data-et="3" data-i18n="et3">3 · Imergir</span>
+      <span class="et" data-et="4" data-i18n="et4">4 · Penetrar</span>
+      <span class="et" data-et="5" data-i18n="et5">5 · Calcular</span>
+    </div>
+  </div>
+
+  <div class="bancada-layout">
+    <!-- Cena SVG -->
+    <div class="cena-wrap">
+      <svg id="cena" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" aria-label="Bancada do ensaio CBR"></svg>
+      <div id="status-cena" class="status-cena">Escolha os parâmetros e clique em <b>Iniciar</b>.</div>
+    </div>
+
+    <!-- Controles / instruções -->
+    <div class="painel-bancada">
+      <div id="passo-box">
+        <h3 id="passo-titulo" data-i18n="passo1_tit">Etapa 1 — Preparação do corpo de prova</h3>
+        <p id="passo-texto" class="passo-texto" data-i18n="passo1_txt">Defina o solo, a energia de compactação e a
+        umidade de moldagem. Depois clique em <b>Iniciar ensaio</b>.</p>
+
+        <div id="controles-preparo">
+          <label for="b-solo" data-i18n="lbl_solo">Tipo de solo</label>
+          <select id="b-solo"></select>
+          <label for="b-energia" data-i18n="lbl_energia">Energia de compactação</label>
+          <select id="b-energia">
+            <option value="normal" data-i18n="en_normal">Normal — 12 golpes/camada</option>
+            <option value="intermediaria" selected data-i18n="en_inter">Intermediária — 26 golpes/camada</option>
+            <option value="modificada" data-i18n="en_modif">Modificada — 55 golpes/camada</option>
+          </select>
+          <label for="b-umidade"><span data-i18n="lbl_umidade">Umidade de moldagem</span>: <span class="range-val" id="b-umidade-val">14</span> %</label>
+          <input type="range" id="b-umidade" min="4" max="34" step="0.5" value="14">
+          <div class="small" id="b-wopt-hint"></div>
+        </div>
+
+        <div id="area-acao">
+          <button class="acao" id="btn-principal" type="button" data-i18n="btn_iniciar">▶ Iniciar ensaio</button>
+        </div>
+
+        <!-- Planilha de leituras (modo penetração) -->
+        <div id="planilha-box" style="display:none">
+          <h4 data-i18n="planilha_tit">Planilha de leituras — penetração</h4>
+          <p class="small" data-i18n="planilha_nota">Leia o ponteiro do mostrador analógico e registre a carga. Tolerância ±10%.</p>
+          <table class="tab" id="planilha"></table>
+        </div>
+
+        <!-- Resultado -->
+        <div id="resultado-box" style="display:none"></div>
+      </div>
+
+      <div class="log-box">
+        <h4 data-i18n="registro">Registro do ensaio</h4>
+        <ul id="log"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gráficos finais (aparecem ao concluir o ensaio) -->
+  <div id="graficos-finais" style="display:none">
+    <h2 data-i18n="graf_titulo">Gráficos do ensaio</h2>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="chart-box" style="height:340px"><canvas id="g-pen"></canvas></div>
+      <div class="chart-box" style="height:340px"><canvas id="g-comp"></canvas></div>
+    </div>
+    <div class="centro" style="margin-top:1rem">
+      <a class="acao" id="btn-ver-sim" href="#" style="display:inline-block;max-width:420px;text-decoration:none" data-i18n="ver_sim">📈 Abrir no simulador com este cenário</a>
+    </div>
+  </div>
+
+  <div class="callout aviso" data-i18n="lab_aviso">
+    Dados <b>sintéticos</b> para ensino. O mostrador, os golpes e a expansão reproduzem o
+    comportamento do ensaio de forma qualitativa.
+  </div>
+
+</main>
+<div id="site-footer"></div>
+<script src="assets/vendor/chart.umd.min.js"></script>
+<script src="assets/js/i18n-app.js"></script>
+<script src="assets/js/cbr-core.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/bancada.js"></script>
+</body>
+</html>

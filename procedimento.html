@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Procedimento — Ensaio CBR / ISC</title>
+<meta name="description" content="Procedimento passo a passo do ensaio CBR/ISC conforme DNIT 172/2016-ME, ABNT NBR 9895 e ASTM D1883: aparelhagem, compactação, imersão, penetração e cálculo.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<div data-lang="pt">
+  <div class="migalha"><a href="index.html">Início</a> › Procedimento</div>
+  <h1>Procedimento do ensaio passo a passo</h1>
+  <p class="lead">Sequência normatizada do ensaio de Índice de Suporte Califórnia, com
+  equivalências entre as normas brasileiras e internacionais.</p>
+
+  <div class="callout norma">
+    <b>Normas de referência:</b> DNIT 172/2016-ME · ABNT NBR 9895:2016 · ASTM D1883 · AASHTO T193.
+    Os procedimentos são equivalentes; variam pequenos detalhes de aparelhagem e unidades.
+  </div>
+
+  <h2>Aparelhagem principal</h2>
+  <table class="tab">
+    <thead><tr><th>Equipamento</th><th>Característica</th><th>Função</th></tr></thead>
+    <tbody>
+      <tr><td>Molde cilíndrico</td><td>Ø 152,4 mm × 177,8 mm de altura (com colar e disco espaçador de 63,5 mm)</td><td>Conter o corpo de prova</td></tr>
+      <tr><td>Soquete</td><td>4,536 kgf, queda de 457 mm (soquete grande)</td><td>Compactar em energia controlada</td></tr>
+      <tr><td>Pistão de penetração</td><td>Área 3 pol² (≈19,35 cm²), Ø ≈ 49,6 mm</td><td>Penetrar o solo no ensaio</td></tr>
+      <tr><td>Prensa</td><td>Avanço de 1,27 mm/min</td><td>Cravar o pistão a velocidade constante</td></tr>
+      <tr><td>Anel dinamométrico / célula de carga</td><td>Mede a força aplicada</td><td>Registrar a carga a cada penetração</td></tr>
+      <tr><td>Extensômetro</td><td>Precisão 0,01 mm</td><td>Medir a expansão durante a imersão</td></tr>
+      <tr><td>Discos anelares de sobrecarga</td><td>≈ 2,27 kgf cada (total ≈ 4,54 kgf)</td><td>Simular o peso das camadas superiores</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Sequência do ensaio</h2>
+  <ol class="passos">
+    <li><b>Preparação da amostra.</b> Seca-se o solo ao ar, destorroa-se e passa-se na peneira
+    de 19 mm (¾"). Determina-se a umidade higroscópica.</li>
+    <li><b>Definição da energia.</b> Escolhe-se a energia (normal 12, intermediária 26 ou
+    modificada 55 golpes por camada) conforme a camada do pavimento a caracterizar.</li>
+    <li><b>Umidade de moldagem.</b> Adiciona-se água para atingir a umidade desejada
+    (idealmente a ótima obtida no ensaio de compactação Proctor correspondente) e homogeneíza-se.</li>
+    <li><b>Compactação.</b> Compacta-se o solo em <b>5 camadas</b> iguais, aplicando o número de
+    golpes definido em cada camada, distribuídos uniformemente. Escarifica-se a superfície entre
+    camadas.</li>
+    <li><b>Acabamento e pesagem.</b> Remove-se o colar, rasa-se o topo e determina-se a massa do
+    conjunto para calcular a massa específica seca e o grau de compactação.</li>
+    <li><b>Montagem para imersão.</b> Inverte-se o corpo de prova sobre disco perfurado, colocam-se
+    os discos de sobrecarga e o tripé com extensômetro. Faz-se a leitura inicial.</li>
+    <li><b>Imersão (embebição).</b> Submerge-se o conjunto em água por <b>4 dias (96 h)</b>,
+    registrando a expansão a cada 24 h. Ao final calcula-se a <b>expansão (%)</b>.</li>
+    <li><b>Drenagem.</b> Retira-se da água, deixa-se drenar por ~15 min e remove-se o excesso.</li>
+    <li><b>Ensaio de penetração.</b> Assenta-se a sobrecarga, posiciona-se o pistão com uma
+    pré-carga de contato e crava-se a <b>1,27 mm/min</b>, lendo a carga nas penetrações de
+    0,63 · 1,27 · 1,90 · 2,54 · 3,17 · 3,81 · 4,45 · 5,08 · 7,62 · 10,16 · 12,70 mm.</li>
+    <li><b>Cálculo.</b> Traça-se a curva carga×penetração, aplica-se a correção da concavidade se
+    necessário, leem-se as pressões a 2,54 e 5,08 mm, divide-se pelas pressões-padrão e adota-se o
+    <b>maior</b> CBR.</li>
+  </ol>
+
+  <h2>Cálculo do CBR — resumo</h2>
+  <div class="formula">
+    CBR<sub>2,54</sub> =
+    <span class="frac"><span class="num">P<sub>2,54</sub></span><span class="den">6,9 MPa</span></span> × 100
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    CBR<sub>5,08</sub> =
+    <span class="frac"><span class="num">P<sub>5,08</sub></span><span class="den">10,3 MPa</span></span> × 100
+  </div>
+  <p class="centro"><b>CBR do ensaio = máx(CBR<sub>2,54</sub> , CBR<sub>5,08</sub>)</b></p>
+
+  <h2>Equivalência entre normas</h2>
+  <table class="tab">
+    <thead><tr><th>Item</th><th>DNIT / ABNT (Brasil)</th><th>ASTM / AASHTO (EUA)</th></tr></thead>
+    <tbody>
+      <tr><td>Designação</td><td>DNIT 172/2016-ME · NBR 9895</td><td>ASTM D1883 · AASHTO T193</td></tr>
+      <tr><td>Nomenclatura</td><td>ISC (Índice de Suporte Califórnia)</td><td>CBR (California Bearing Ratio)</td></tr>
+      <tr><td>Pressão-padrão 2,54 mm</td><td>6,9 MPa ≈ 70,3 kgf/cm²</td><td>1000 psi</td></tr>
+      <tr><td>Pressão-padrão 5,08 mm</td><td>10,3 MPa ≈ 105,5 kgf/cm²</td><td>1500 psi</td></tr>
+      <tr><td>Velocidade de penetração</td><td>1,27 mm/min</td><td>0,05 pol/min (=1,27 mm/min)</td></tr>
+      <tr><td>Área do pistão</td><td>≈ 19,35 cm²</td><td>3 pol²</td></tr>
+      <tr><td>Imersão</td><td>4 dias</td><td>96 h (4 dias)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout dica">
+    <b>Pronto para ver na prática?</b> Vá ao <a href="bancada.html">laboratório virtual</a> e
+    execute essa sequência do começo ao fim — moldar, imergir, penetrar e calcular.
+  </div>
+
+  <div class="centro" style="margin-top:2rem">
+    <a class="tag" href="bancada.html" style="font-size:1rem;padding:.5rem 1.2rem">→ Próximo: Laboratório virtual</a>
+  </div>
+
+</div>
+<div data-lang="en"><div class="migalha"><a href="index.html">Home</a> › Procedure</div>
+  <h1>California Bearing Ratio test procedure step by step</h1>
+  <p class="lead">Standardized sequence of the California Bearing Ratio test, with
+  equivalencies between Brazilian and international standards.</p>
+
+  <div class="callout norma">
+    <b>Reference standards:</b> DNIT 172/2016-ME · ABNT NBR 9895:2016 · ASTM D1883 · AASHTO T193.
+    The procedures are equivalent; minor details of apparatus and units vary.
+  </div>
+
+  <h2>Main apparatus</h2>
+  <table class="tab">
+    <thead><tr><th>Equipment</th><th>Characteristic</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>Cylindrical mold</td><td>Ø 152.4 mm × 177.8 mm height (with collar and 63.5 mm spacer disk)</td><td>Contain the test specimen</td></tr>
+      <tr><td>Rammer</td><td>4.536 kgf, drop of 457 mm (large rammer)</td><td>Compact at controlled energy</td></tr>
+      <tr><td>Penetration piston</td><td>Area 3 in² (≈19.35 cm²), Ø ≈ 49.6 mm</td><td>Penetrate the soil in the test</td></tr>
+      <tr><td>Press</td><td>Advance of 1.27 mm/min</td><td>Drive the piston at constant velocity</td></tr>
+      <tr><td>Load ring / load cell</td><td>Measures applied force</td><td>Record load at each penetration</td></tr>
+      <tr><td>Extensometer</td><td>Precision 0.01 mm</td><td>Measure swelling during soaking</td></tr>
+      <tr><td>Annular surcharge disks</td><td>≈ 2.27 kgf each (total ≈ 4.54 kgf)</td><td>Simulate weight of upper layers</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Test sequence</h2>
+  <ol class="passos">
+    <li><b>Sample preparation.</b> Air-dry the soil, break up clods, and pass through the
+    19 mm (¾") sieve. Determine hygroscopic moisture.</li>
+    <li><b>Energy selection.</b> Choose the energy (normal 12, intermediate 26, or
+    modified 55 blows per layer) according to the pavement layer to be characterized.</li>
+    <li><b>Molding moisture.</b> Add water to reach the desired moisture
+    (ideally the optimum obtained in the corresponding Proctor compaction test) and homogenize.</li>
+    <li><b>Compaction.</b> Compact the soil in <b>5 equal layers</b>, applying the number of
+    blows defined in each layer, distributed uniformly. Scarify the surface between
+    layers.</li>
+    <li><b>Finishing and weighing.</b> Remove the collar, strike off the top, and determine the mass of the
+    assembly to calculate dry unit weight and degree of compaction.</li>
+    <li><b>Setup for soaking.</b> Invert the test specimen onto perforated disk, place
+    the surcharge disks and tripod with extensometer. Take initial reading.</li>
+    <li><b>Soaking (imbibition).</b> Submerge the assembly in water for <b>4 days (96 h)</b>,
+    recording swelling every 24 h. At the end calculate the <b>swelling (%)</b>.</li>
+    <li><b>Drainage.</b> Remove from water, allow to drain for ~15 min, and remove excess.</li>
+    <li><b>Penetration test.</b> Seat the surcharge, position the piston with a
+    seating load and drive at <b>1.27 mm/min</b>, reading the load at penetrations of
+    0.63 · 1.27 · 1.90 · 2.54 · 3.17 · 3.81 · 4.45 · 5.08 · 7.62 · 10.16 · 12.70 mm.</li>
+    <li><b>Calculation.</b> Plot the load×penetration curve, apply concavity correction if
+    necessary, read the pressures at 2.54 and 5.08 mm, divide by the standard pressures, and adopt the
+    <b>higher</b> CBR.</li>
+  </ol>
+
+  <h2>CBR calculation — summary</h2>
+  <div class="formula">
+    CBR<sub>2.54</sub> =
+    <span class="frac"><span class="num">P<sub>2.54</sub></span><span class="den">6.9 MPa</span></span> × 100
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    CBR<sub>5.08</sub> =
+    <span class="frac"><span class="num">P<sub>5.08</sub></span><span class="den">10.3 MPa</span></span> × 100
+  </div>
+  <p class="centro"><b>Test CBR = max(CBR<sub>2.54</sub> , CBR<sub>5.08</sub>)</b></p>
+
+  <h2>Equivalence between standards</h2>
+  <table class="tab">
+    <thead><tr><th>Item</th><th>DNIT / ABNT (Brazil)</th><th>ASTM / AASHTO (USA)</th></tr></thead>
+    <tbody>
+      <tr><td>Designation</td><td>DNIT 172/2016-ME · NBR 9895</td><td>ASTM D1883 · AASHTO T193</td></tr>
+      <tr><td>Nomenclature</td><td>ISC (Índice de Suporte Califórnia)</td><td>California Bearing Ratio</td></tr>
+      <tr><td>Standard pressure 2.54 mm</td><td>6.9 MPa ≈ 70.3 kgf/cm²</td><td>1000 psi</td></tr>
+      <tr><td>Standard pressure 5.08 mm</td><td>10.3 MPa ≈ 105.5 kgf/cm²</td><td>1500 psi</td></tr>
+      <tr><td>Penetration velocity</td><td>1.27 mm/min</td><td>0.05 in/min (=1.27 mm/min)</td></tr>
+      <tr><td>Piston area</td><td>≈ 19.35 cm²</td><td>3 in²</td></tr>
+      <tr><td>Soaking</td><td>4 days</td><td>96 h (4 days)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout dica">
+    <b>Ready to see it in practice?</b> Go to the <a href="bancada.html">virtual laboratory</a> and
+    execute this sequence from start to finish — mold, soak, penetrate, and calculate.
+  </div>
+
+  <div class="centro" style="margin-top:2rem">
+    <a class="tag" href="bancada.html" style="font-size:1rem;padding:.5rem 1.2rem">→ Next: Virtual laboratory</a>
+  </div></div>
+<div data-lang="es"><div class="migalha"><a href="index.html">Inicio</a> › Procedimiento</div>
+  <h1>Procedimiento del ensayo paso a paso</h1>
+  <p class="lead">Secuencia normalizada del ensayo de Índice de Soporte California, con
+  equivalencias entre las normas brasileñas e internacionales.</p>
+
+  <div class="callout norma">
+    <b>Normas de referencia:</b> DNIT 172/2016-ME · ABNT NBR 9895:2016 · ASTM D1883 · AASHTO T193.
+    Los procedimientos son equivalentes; varían pequeños detalles de equipamiento y unidades.
+  </div>
+
+  <h2>Equipamiento principal</h2>
+  <table class="tab">
+    <thead><tr><th>Equipo</th><th>Característica</th><th>Función</th></tr></thead>
+    <tbody>
+      <tr><td>Molde cilíndrico</td><td>Ø 152,4 mm × 177,8 mm de altura (con collar y disco espaciador de 63,5 mm)</td><td>Contener la probeta</td></tr>
+      <tr><td>Martillo</td><td>4,536 kgf, caída de 457 mm (martillo grande)</td><td>Compactar con energía controlada</td></tr>
+      <tr><td>Pistón de penetración</td><td>Área 3 pol² (≈19,35 cm²), Ø ≈ 49,6 mm</td><td>Penetrar el suelo en el ensayo</td></tr>
+      <tr><td>Prensa</td><td>Avance de 1,27 mm/min</td><td>Clavar el pistón a velocidad constante</td></tr>
+      <tr><td>Anillo dinamométrico / celda de carga</td><td>Mide la fuerza aplicada</td><td>Registrar la carga en cada penetración</td></tr>
+      <tr><td>Extensómetro</td><td>Precisión 0,01 mm</td><td>Medir la expansión durante la inmersión</td></tr>
+      <tr><td>Discos anulares de sobrecarga</td><td>≈ 2,27 kgf cada uno (total ≈ 4,54 kgf)</td><td>Simular el peso de las capas superiores</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Secuencia del ensayo</h2>
+  <ol class="passos">
+    <li><b>Preparación de la muestra.</b> Se seca el suelo al aire, se desmorona y se pasa por el tamiz
+    de 19 mm (¾"). Se determina la humedad higroscópica.</li>
+    <li><b>Definición de la energía.</b> Se elige la energía (normal 12, intermedia 26 o
+    modificada 55 golpes por capa) según la capa del pavimento a caracterizar.</li>
+    <li><b>Humedad de moldeo.</b> Se añade agua para alcanzar la humedad deseada
+    (idealmente la óptima obtenida en el ensayo de compactación Proctor correspondiente) y se homogeneiza.</li>
+    <li><b>Compactación.</b> Se compacta el suelo en <b>5 capas</b> iguales, aplicando el número de
+    golpes definido en cada capa, distribuidos uniformemente. Se escarifica la superficie entre
+    capas.</li>
+    <li><b>Acabado y pesaje.</b> Se retira el collar, se rasantea la parte superior y se determina la masa del
+    conjunto para calcular la masa específica seca y el grado de compactación.</li>
+    <li><b>Montaje para inmersión.</b> Se invierte la probeta sobre disco perforado, se colocan
+    los discos de sobrecarga y el trípode con extensómetro. Se realiza la lectura inicial.</li>
+    <li><b>Inmersión (embebición).</b> Se sumerge el conjunto en agua por <b>4 días (96 h)</b>,
+    registrando la expansión cada 24 h. Al final se calcula la <b>expansión (%)</b>.</li>
+    <li><b>Drenaje.</b> Se retira del agua, se deja drenar por ~15 min y se retira el exceso.</li>
+    <li><b>Ensayo de penetración.</b> Se asienta la sobrecarga, se posiciona el pistón con una
+    precarga de contacto y se clava a <b>1,27 mm/min</b>, leyendo la carga en las penetraciones de
+    0,63 · 1,27 · 1,90 · 2,54 · 3,17 · 3,81 · 4,45 · 5,08 · 7,62 · 10,16 · 12,70 mm.</li>
+    <li><b>Cálculo.</b> Se traza la curva carga×penetración, se aplica la corrección de concavidad si
+    es necesario, se leen las presiones a 2,54 y 5,08 mm, se dividen por las presiones-patrón y se adopta el
+    <b>mayor</b> CBR.</li>
+  </ol>
+
+  <h2>Cálculo del CBR — resumen</h2>
+  <div class="formula">
+    CBR<sub>2,54</sub> =
+    <span class="frac"><span class="num">P<sub>2,54</sub></span><span class="den">6,9 MPa</span></span> × 100
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    CBR<sub>5,08</sub> =
+    <span class="frac"><span class="num">P<sub>5,08</sub></span><span class="den">10,3 MPa</span></span> × 100
+  </div>
+  <p class="centro"><b>CBR del ensayo = máx(CBR<sub>2,54</sub> , CBR<sub>5,08</sub>)</b></p>
+
+  <h2>Equivalencia entre normas</h2>
+  <table class="tab">
+    <thead><tr><th>Ítem</th><th>DNIT / ABNT (Brasil)</th><th>ASTM / AASHTO (EUA)</th></tr></thead>
+    <tbody>
+      <tr><td>Designación</td><td>DNIT 172/2016-ME · NBR 9895</td><td>ASTM D1883 · AASHTO T193</td></tr>
+      <tr><td>Nomenclatura</td><td>ISC (Índice de Soporte California)</td><td>California Bearing Ratio</td></tr>
+      <tr><td>Presión-patrón 2,54 mm</td><td>6,9 MPa ≈ 70,3 kgf/cm²</td><td>1000 psi</td></tr>
+      <tr><td>Presión-patrón 5,08 mm</td><td>10,3 MPa ≈ 105,5 kgf/cm²</td><td>1500 psi</td></tr>
+      <tr><td>Velocidad de penetración</td><td>1,27 mm/min</td><td>0,05 pol/min (=1,27 mm/min)</td></tr>
+      <tr><td>Área del pistón</td><td>≈ 19,35 cm²</td><td>3 pol²</td></tr>
+      <tr><td>Inmersión</td><td>4 días</td><td>96 h (4 días)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout dica">
+    <b>¿Listo para verlo en la práctica?</b> Ve al <a href="bancada.html">laboratorio virtual</a> y
+    ejecuta esta secuencia de principio a fin — moldear, sumergir, penetrar y calcular.
+  </div>
+
+  <div class="centro" style="margin-top:2rem">
+    <a class="tag" href="bancada.html" style="font-size:1rem;padding:.5rem 1.2rem">→ Siguiente: Laboratorio virtual</a>
+  </div></div>
+</main>
+<div id="site-footer"></div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
