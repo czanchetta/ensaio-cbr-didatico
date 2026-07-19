@@ -51,14 +51,15 @@ header.topo{background:linear-gradient(120deg,var(--azul),var(--azul-claro));
   color:#fff;text-decoration:none}
 .marca .logo{width:34px;height:34px;flex:0 0 34px}
 .marca img.logo-img{height:30px;width:auto;flex:0 0 auto;background:#fff;border-radius:5px;padding:2px 5px}
-.topo-acoes{display:flex;align-items:center;gap:.4rem}
-.lang-switch{display:flex;gap:.1rem;background:rgba(255,255,255,.12);border-radius:6px;padding:.12rem}
-.lang-switch button{background:none;border:none;color:#dfeaf3;padding:.22rem .5rem;border-radius:5px;
-  cursor:pointer;font-size:.82rem;font-weight:600}
-.lang-switch button.ativo{background:#fff;color:var(--azul)}
-.theme-toggle{background:rgba(255,255,255,.12);border:none;color:#fff;width:34px;height:30px;
-  border-radius:6px;cursor:pointer;font-size:1rem}
-.theme-toggle:hover,.lang-switch button:hover{background:rgba(255,255,255,.25)}
+.topo-acoes{display:flex;align-items:center;gap:.5rem}
+.lang-switch{display:flex;gap:.15rem;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.55);
+  border-radius:7px;padding:.15rem}
+.lang-switch button{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;
+  padding:.24rem .55rem;border-radius:5px;cursor:pointer;font-size:.82rem;font-weight:700;line-height:1}
+.lang-switch button.ativo{background:#fff;color:var(--azul);border-color:#fff}
+.theme-toggle{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.45);color:#fff;
+  width:36px;height:32px;border-radius:6px;cursor:pointer;font-size:1rem}
+.theme-toggle:hover,.lang-switch button:hover{background:rgba(255,255,255,.32)}
 .rodape .logo-rodape{height:34px;background:#fff;border-radius:5px;padding:3px 7px;margin-bottom:.6rem}
 .rodape-links a{display:inline-flex;align-items:center;gap:.35rem;margin-right:1rem;text-decoration:none}
 .rodape-links a:hover{text-decoration:underline}

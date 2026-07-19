@@ -116,9 +116,11 @@
   // Aplica as traduções de window.I18N (definido por i18n-<pagina>.js, se houver)
   function aplicaI18n() {
     var dict = window.I18N || {};
-    // blocos de prosa por idioma: mostra só o do idioma ativo
-    document.querySelectorAll("[data-lang]").forEach(function (elm) {
-      elm.style.display = (elm.getAttribute("data-lang") === LANG) ? "" : "none";
+    // blocos de prosa por idioma: mostra só o do idioma ativo.
+    // IMPORTANTE: restrito a blocos de conteúdo (data-lang-block) para NÃO
+    // atingir os botões do seletor de idioma, que usam data-lang como valor.
+    document.querySelectorAll("[data-lang-block]").forEach(function (elm) {
+      elm.style.display = (elm.getAttribute("data-lang-block") === LANG) ? "" : "none";
     });
     document.querySelectorAll("[data-i18n]").forEach(function (elm) {
       var key = elm.getAttribute("data-i18n");
